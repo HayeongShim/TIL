@@ -49,6 +49,23 @@ func superAdd(numbers ...int) (sum int) {
 	return
 }
 
+func canIDrink(age int) bool {
+	if koreanAge := age + 2; koreanAge < 18 {
+		return false
+	}
+	return true
+}
+
+func canIDrink_switch(age int) bool {
+	switch koreanAge := age + 2; koreanAge {
+	case 10:
+		return false
+	case 18:
+		return true
+	}
+	return false
+}
+
 func main() {
 
 	// ----------------------------------------------------------------
@@ -93,9 +110,16 @@ func main() {
 	fmt.Println("totalLength:", totalLength4, ", upperName:", upperName4)
 
 	// ----------------------------------------------------------------
-	// for statement
+	// for
 	// ----------------------------------------------------------------
 	sum := superAdd(1, 2, 3, 4, 5)
 	fmt.Println("superAdd:", sum)
+
+	// ----------------------------------------------------------------
+	// if, switch
+	// variable expression : if-else 및 switch 조건에만 사용하는 변수를 정의 가능하다.
+	// ----------------------------------------------------------------
+	fmt.Println(canIDrink(16))
+	fmt.Println(canIDrink_switch(18))
 }
 ```
